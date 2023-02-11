@@ -5,7 +5,7 @@ Choose to sync routes and/or trips from each of your API client management page.
 
 ## Webhooks
 
-Ride With GPS issues a `POST` request to your webhook URL whenever a user of your OAuth application creates, updates, deletes, pins or unpins a route or a trip (whichever you have selected to sync).
+Ride with GPS issues a `POST` request to your webhook URL whenever a user of your OAuth application creates, updates, deletes, pins or unpins a route or a trip (whichever you have selected to sync).
 
 ### Configuration
 
@@ -13,7 +13,7 @@ From your user account settings page go to the **Developers** tab and edit the A
 
 ### Webhook request
 
-Ride With GPS `POST` notifications at your webhook URL with actions that have been taken by one of your users on one or multiple items. Here is an example of a webhook request body:
+Ride with GPS `POST` notifications at your webhook URL with actions that have been taken by one of your users on one or multiple items. Here is an example of a webhook request body:
 
 ```javascript
 {
@@ -56,7 +56,7 @@ x-rwgps-signature: <signature>
 
 The `x-rwgps-api-key` header is included to let you identify the API client responsible for the request in case you handle multiple API clients from the same system.
 
-Every webhook request includes a `x-rwgps-signature` header whose value is a HMAC-SHA256 signature of the raw request body, using your OAuth secret as the signing key. This allows you to validate that the request originated from Ride With GPS, by checking the validity of the signature before processing.
+Every webhook request includes a `x-rwgps-signature` header whose value is a HMAC-SHA256 signature of the raw request body, using your OAuth secret as the signing key. This allows you to validate that the request originated from Ride with GPS, by checking the validity of the signature before processing.
 
 ```python
 # Python example
@@ -74,7 +74,7 @@ const valid = signature == createHmac('sha256', '<oauthSecret>').update(requestR
 
 ### Webhook request handling
 
-When requesting your webhook, Ride With GPS expects a `200` response within 1 second. We strongly recommend that you acknowledge the webhook request as quickly as possible and process its content in a separate thread.
+When requesting your webhook, Ride with GPS expects a `200` response within 1 second. We strongly recommend that you acknowledge the webhook request as quickly as possible and process its content in a separate thread.
 
 Processing a webhook request includes, for each `notification` in the `notifications` array:
 
@@ -87,7 +87,7 @@ Note: If you did not store the `user_id` alongisde the `access_token`, you can r
 ### Other implementation notes
 
 * No retry mechanism is implemented at this point.
-* Ride With GPS does not follow `3xx` redirect status codes.
+* Ride with GPS does not follow `3xx` redirect status codes.
 
 
 

@@ -1,6 +1,6 @@
-# Developing against the Ride With GPS API
+# Developing against the Ride with GPS API
 
-Welcome to the Ride With GPS API documentation for developers.
+Welcome to the Ride with GPS API documentation for developers.
 
 Do not hesitate to contact [developers@ridewithgps.com](mailto:developers@ridewithgps.com) with any question
 

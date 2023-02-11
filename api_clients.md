@@ -1,6 +1,6 @@
 # API Clients
 
-You need an API Client in order to interact with the Ride With GPS API.
+You need an API Client in order to interact with the Ride with GPS API.
 
 ```
 x-rwgps-api-key: <api_key>

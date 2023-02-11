@@ -4,12 +4,12 @@ Ride with GPS is an OAuth provider.
 
 ## Configuration
 
-Your application is configured for OAuth with Ride With GPS with the following:
+Your application is configured for OAuth with Ride with GPS with the following:
 
 * `name`: the name of your application
 * `redirect_uri`: one or more callback URI where users are redirected during the authorization flow
 
-Ride With GPS provides you with:
+Ride with GPS provides you with:
 
 * `client_id`: your OAuth client ID
 * `client_secret`: your OAuth client secret
@@ -18,7 +18,7 @@ Ride With GPS provides you with:
 
 ### 1. Authorize
 
-Your application sends the user to the authorization web page on the Ride With GPS website:
+Your application sends the user to the authorization web page on the Ride with GPS website:
 
 ```
 GET https://ridewithgps.com/oauth/authorize
@@ -71,11 +71,11 @@ The response includes the OAuth2 `access_token` to use for further authenticatio
 }
 ```
 
-`user_id` is a the Ride With GPS id for the user who completed the autorization flow.
+`user_id` is a the Ride with GPS id for the user who completed the autorization flow.
 
 ### 3. Make OAuth authenticated requests
 
-Your application can then make requests on the Ride With GPS API with the `Authorization` header to authenticate as your user:
+Your application can then make requests on the Ride with GPS API with the `Authorization` header to authenticate as your user:
 
 ```
 GET https://ridewithgps.com/users/current.json
@@ -84,7 +84,7 @@ Authorization: Bearer <access_token>
 
 ## Convert legacy auth_token to OAauth2 access_token
 
-The `GET /oauth_access_token.json` endpoint issues OAuth `access_token`s for the `auth_token`s your application might have stored for your users. Use this endpoint to migrate to OAuth without requiring your users to authorize your application with Ride With GPS again.
+The `GET /oauth_access_token.json` endpoint issues OAuth `access_token`s for the `auth_token`s your application might have stored for your users. Use this endpoint to migrate to OAuth without requiring your users to authorize your application with Ride with GPS again.
 
 The endpoint requires authenticating with the `auth_token` for which a OAuth `access_token` is to be issued, which is done by adding the following headers to the request:
 
