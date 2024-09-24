@@ -1,6 +1,6 @@
 # Route endpoints
 
-Reference for [route, track and points of interest attributes](../reference.md)
+Reference for [route, track points, course points, points of interest and activity types](../reference.md)
 
 ## GET /api/v1/routes.json
 
@@ -44,7 +44,7 @@ Returns a paginated list of routes owned by the authenticated user, ordered by `
 }
 ```
 
-Each route in the response has the same attributes as the route detail request below, except that track points (`track_points`), course points (`course_points`) and points of interest (`points_of_interest`) are not returned here.
+Each route in the response has the same attributes as the route detail request below, except `track_points`, `course_points`, `points_of_interest` and `activity_types` that are not present here.
 
 ## GET /api/v1/routes/[id].json
 
@@ -87,6 +87,7 @@ Returns a full representation of the route identified by its `id`.
     "difficulty": "easy",
     "unpaved_pct": 5,
     "surface": "mostly_paved",
+    "activity_types": [ "cycling" ],
     "created_at": "2024-01-16T17:46:23-08:00",
     "updated_at": "2024-01-22T16:42:37-08:00",
     "track_points": [

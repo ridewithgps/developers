@@ -5,7 +5,7 @@
 Attributes exposed by the API for routes and trips:
 
 | Attribute        | Description                          | Type    | Unit              | Route | Trip  |
-| ---------------- | ------------------------------------ | ------- | ----------------- |:-----:|:-----:|
+|:---------------- |:------------------------------------ |:------- |:----------------- |:-----:|:-----:|
 | `first_lat`      | First point latitude                 | Float   | degrees           | Y     | Y     |
 | `first_lng`      | First point longitude                | Float   | degrees           | Y     | Y     |
 | `last_lat`       | Last point latitude                  | Float   | degrees           | Y     | Y     |
@@ -55,10 +55,10 @@ Course points are present on routes only, they are the cues that form a cuesheet
 
 **Attributes**
 
-Course points and track points attributes supported by the Ride with GPS API:
+Attributes exposed by the API for course points and track points:
 
 | Attribute  | Description           | Type    | Unit              | Route<br>track points | Route<br>course points | Trip<br>track points |
-| ---------- | --------------------- | ------- | ----------------- |:---------------------:|:----------------------:|:--------------------:|
+|:---------- |:--------------------- |:------- |:----------------- |:---------------------:|:----------------------:|:--------------------:|
 | `x`        | Longitude             | Float   | degrees           | Y                     | Y                      | Y                    |
 | `y`        | Latitude              | Float   | degrees           | Y                     | Y                      | Y                    |
 | `d`        | Distance from start   | Integer | meters            | Y                     | Y                      | Y                    |
@@ -85,7 +85,7 @@ Course points and track points attributes supported by the Ride with GPS API:
 Points of interest are provided by the user and are present for routes only. They are exposed through the API with one of the following `type_id` and `type_name`.
 
 | Type ID | Type name          |
-| ------- | ------------------ |
+|:------- |:------------------ |
 | 3       | Camping            |
 | 10      | Lodging            |
 | 12      | Parking            |
@@ -126,3 +126,29 @@ Points of interest are provided by the user and are present for routes only. The
 | 50      | Transit Center     |
 | 51      | Bike Share         |
 
+## Activity types
+
+Actvity types exposed by the API:
+
+| Activity Type          |
+|:---------------------- |
+| cycling                |
+| road_cycling           |
+| gravel_unpaved_cycling |
+| mountain_biking        |
+| indoor_cycling         |
+| ebiking                |
+| emountain_biking       |
+| running                |
+| indoor_running         |
+| trail_running          |
+| walking                |
+| hiking                 |
+| motorcycling           |
+| skiing                 |
+| snowboarding           |
+| swimming               |
+| lap_swimming           |
+| open_water_swimming    |
+| horseback_riding       |
+| other                  |
