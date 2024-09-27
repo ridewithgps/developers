@@ -112,8 +112,10 @@ Knowing your email and password, get an authentication token associated with you
 
 ```javascript
 {
-  email: "[your_email]",
-  password: "[your_password]"
+  user: {
+    email: "[your_email]",
+    password: "[your_password]"
+  }
 }
 ```
 
