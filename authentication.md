@@ -1,6 +1,6 @@
 # Authentication
 
-Most requests made to the API must be authenticated. The API supports 2 shemes for authentication: OAuth and Basic Authentication.
+Most requests made to the API must be authenticated. The API supports 2 schemes for authentication: OAuth and Basic Authentication.
 
 We strongly recommend that you use OAuth. Use basic authentication if you are the only user of your application.
 
