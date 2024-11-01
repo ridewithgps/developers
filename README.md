@@ -31,6 +31,7 @@ The API has endpoints for:
 * [Users](endpoints/users.md)
 * [Routes](endpoints/routes.md)
 * [Trips](endpoints/trips.md)
+* [Events](endpoints/events.md)
 * [Sync](endpoints/sync.md)
 
 ## Webhooks
