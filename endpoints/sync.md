@@ -13,6 +13,7 @@ Returns a list of items (routes and/or trips) that the user has interacted with 
 * **Authentication**: [Required](../authentication.md)
 * **Query params**:
   * `since=[since]` - iso8601 formatted datetime
+  * `assets=routes,trips` - the type of assets to return, defaults to your API client setting.
 
 **Example response**
 
@@ -55,7 +56,7 @@ Returns a list of items (routes and/or trips) that the user has interacted with 
   ],
   "meta": {
     "rwgps_datetime": "2024-09-09T22:53:52+00:00",
-    "next_sync_url": "http://localhost:3000/api/v1/sync.json?models=routes%2Ctrips&since=2024-09-09T22%3A53%3A52%2B00%3A00"
+    "next_sync_url": "http://localhost:3000/api/v1/sync.json?assets=routes%2Ctrips&since=2024-09-09T22%3A53%3A52%2B00%3A00"
   }
 }
 ```

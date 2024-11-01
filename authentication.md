@@ -2,9 +2,9 @@
 
 Most requests made to the API must be authenticated. The API supports 2 schemes for authentication: OAuth and Basic Authentication.
 
-We strongly recommend that you use OAuth. Use basic authentication if you are the only user of your application.
+We strongly recommend that you use OAuth. Use basic authentication if you are the only user of your application or if you are an organization account.
 
-## Oauth authentication
+## [Oauth authentication](#oauth_authentication)
 
 Ride with GPS is an OAuth provider, and we recommend that you use OAuth if you plan authenticate users others than yourself. The workflow is secure, and does not require users to share their Ride with GPS password with you.
 
@@ -95,9 +95,13 @@ GET https://ridewithgps.com/api/v1/users/current.json
 Authorization: Bearer [access_token]
 ```
 
-## Basic authentication
+## [Basic authentication](#basic-authentication)
+
+Basic authentication suits the needs of organization accounts and single user applications.
 
 ### 1. Get an authentication token for your account
+
+#### User accounts
 
 Knowing your email and password, get an authentication token associated with your API key.
 
@@ -139,6 +143,25 @@ Knowing your email and password, get an authentication token associated with you
   }
 }
 ```
+
+#### Organization accounts
+
+Unlike user accounts, organization accounts are not setup with an email and password, which prevents them from using the endpoint above to generate authentication tokens.
+
+Instead, to create authentication tokens, **administrators** of the organisation can:
+
+* Go to to their organization home page
+* Sign into the organization
+* Click the "Manage Account" link
+* Click the "Developers" tab
+* Create a new API client if needed
+* Go to the edit API client page and click the "Create new Auth Token" button
+
+The page will then display the authentication token and it can be used authenticate the API requests.
+
+> [!NOTE]
+> The "Developers" tab is currently an opt-in for organization accounts.
+> [Email us](mailto:developers@ridewithgps.com) so we can enable it for your organization.
 
 ### 2. Make Basic authenticated requests
 
