@@ -66,7 +66,7 @@ The response is a JSON representation of the point of interest.
 Update a point of interest with a `PATCH` request at its URL:
 
 ```javascript
-// POST https://ridewithgps.com/organizations/<organization_id>/points_of_interest<id>.json
+// PATCH https://ridewithgps.com/organizations/<organization_id>/points_of_interest/<id>.json
 {
   "point_of_interest": {
     "name": "Point Of Interest Updated",
