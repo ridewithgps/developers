@@ -95,6 +95,34 @@ GET https://ridewithgps.com/api/v1/users/current.json
 Authorization: Bearer [access_token]
 ```
 
+### 4. Revoke OAuth Access Tokens
+
+Issue the following request to revoke an existing OAuth access token:
+
+**Request**
+
+* **Method**: `POST`
+* **URL**: `https://ridewithgps.com/oauth/revoke.json`
+
+**Request body**
+
+```javascript
+{
+  "client_id": "[client_id]",
+  "client_secret": "[client_secret]",
+  "token": "[access_token]"
+}
+```
+
+**Example Response**
+
+```javascript
+// 200 - OK
+{}
+```
+
+The token will then be revoked and cannot be used to authenticate requests anymore
+
 ## [Basic authentication](#basic-authentication)
 
 Basic authentication suits the needs of organization accounts and single user applications.
