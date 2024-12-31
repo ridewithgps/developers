@@ -1,10 +1,9 @@
 # Route endpoints
 
-Reference for [route, track points, course points, points of interest and activity types](../reference.md)
 
 ## GET /api/v1/routes.json
 
-Returns a paginated list of routes owned by the authenticated user, ordered by `created_at` descending.
+Returns a paginated list of routes owned by the authenticated user, ordered by `updated_at` descending.
 
 **Request**
 
@@ -44,7 +43,7 @@ Returns a paginated list of routes owned by the authenticated user, ordered by `
 }
 ```
 
-Each route in the response has the same attributes as the route detail request below, except `track_points`, `course_points`, `points_of_interest` and `activity_types` that are not present here.
+Each route in the response has all the attributes of the route detail request below, except the `track_points`, `course_points` and `points_of_interest` attributes.
 
 ## GET /api/v1/routes/[id].json
 
@@ -87,7 +86,6 @@ Returns a full representation of the route identified by its `id`.
     "difficulty": "easy",
     "unpaved_pct": 5,
     "surface": "mostly_paved",
-    "activity_types": [ "cycling" ],
     "created_at": "2024-01-16T17:46:23-08:00",
     "updated_at": "2024-01-22T16:42:37-08:00",
     "track_points": [
@@ -142,3 +140,10 @@ Returns a full representation of the route identified by its `id`.
 ```
 
 If the authenticated user does not have permission to view the route a `403 - Forbidden` error is returned.
+
+**References**
+
+* [Route attributes](../reference/routes_and_trips.md)
+* [Track points and course points attributes](../reference/track_points.md)
+* [Points of interest attributes](../reference/points_of_interest.md)
+

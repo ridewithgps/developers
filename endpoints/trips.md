@@ -1,10 +1,8 @@
 # Trip endpoints
 
-Reference for [trip, track and points of interest attributes](../reference.md)
-
 ## GET /api/v1/trips.json
 
-Returns a paginated list of trips owned by the authenticated user, ordered by `created_at` descending.
+Returns a paginated list of trips owned by the authenticated user, ordered by `updated_at` descending.
 
 **Request**
 
@@ -38,13 +36,13 @@ Returns a paginated list of trips owned by the authenticated user, ordered by `c
     "pagination": {
       "record_count": 22,
       "page_count": 1,
-      "next_page_url": "https://ridewithgps.com/api/v1/routes.json?page=2"
+      "next_page_url": "https://ridewithgps.com/api/v1/trips.json?page=2"
     }
   }
 }
 ```
 
-Each trip in the response has the same attributes as the trip detail request below, except that track points (`track_points`) are not returned here.
+Each trip in the response has all the attributes of the trip detail request below, except the `track_points` attribute.
 
 ## GET /api/v1/trips/[id].json
 
@@ -72,6 +70,9 @@ Returns a full representation of the trip identified by its `id`.
     "locality": "Eugene",
     "administrative_area": "OR",
     "country_code": "US",
+    "activity_type": "cycling:gravel",
+    "fit_sport": 2,
+    "fit_sub_sport": 46,
     "is_stationary": false,
     "distance": 16146,
     "duration": 2705,
@@ -139,3 +140,7 @@ Returns a full representation of the trip identified by its `id`.
 
 If the authenticated user does not have permission to view the trip a `403 - Forbidden` error is returned.
 
+**References**
+
+* [Trip attributes](../reference/routes_and_trips.md)
+* [Track points attributes](../reference/track_points.md)
