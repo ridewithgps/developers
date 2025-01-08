@@ -1,5 +1,8 @@
 # Points of interest API endpoints for organizations
 
+> [!WARNING]  
+> These API endpoints are deprecated and will be removed in the future. Please use our [new endpoints](./points_of_interest.md)
+
 ## Authentication
 
 Requests to the endpoints below must authenticated with the following headers:
