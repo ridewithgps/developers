@@ -242,5 +242,5 @@ If a resource does not exists a `404 - Not Found` error is returned.
 
 **References**
 
-* [Points of interest attributes](../reference/points_of_interest.md)
+* [Points of interest attributes](../../reference/points_of_interest.md)
 
