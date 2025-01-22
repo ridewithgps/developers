@@ -11,6 +11,7 @@
     "points_of_interest": [
       {
         "id": 1,
+        "type": "convenience_store",
         "type_id": 24,
         "type_name": "Convenience Store",
         "name": "Seven Eleven"
@@ -25,46 +26,46 @@
 }
 ```
 
-They are exposed with one of the following `type_id` and `type_name`.
+They are exposed with one of the following `type`, `type_id` and `type_name`:
 
-| Type ID | Type name          |
-|:------- |:------------------ |
-| 3       | Camping            |
-| 10      | Lodging            |
-| 12      | Parking            |
-| 13      | Food               |
-| 14      | Viewpoint          |
-| 15      | Restroom           |
-| 17      | Generic            |
-| 20      | Aid Station        |
-| 21      | Bar                |
-| 22      | Bike Shop          |
-| 23      | Bike Parking       |
-| 24      | Convenience Store  |
-| 25      | First Aid          |
-| 26      | Hospital           |
-| 27      | Rest Stop          |
-| 28      | Trailhead          |
-| 29      | Geocache           |
-| 30      | Water              |
-| 31      | Control            |
-| 32      | Winery             |
-| 33      | Start              |
-| 34      | Stop               |
-| 35      | Finish             |
-| 36      | ATM                |
-| 37      | Caution            |
-| 38      | Coffee             |
-| 39      | Ferry              |
-| 40      | Gas Station        |
-| 41      | Library            |
-| 42      | Monument           |
-| 43      | Park               |
-| 44      | Segment Start      |
-| 45      | Segment End        |
-| 46      | Shopping           |
-| 47      | Shower             |
-| 48      | Summit             |
-| 49      | Swimming           |
-| 50      | Transit Center     |
-| 51      | Bike Share         |
+| Type                | Type ID | Type name          |
+|:------------------- |:------- |:------------------ |
+| camping             | 3       | Camping            |
+| lodging             | 10      | Lodging            |
+| parking             | 12      | Parking            |
+| food                | 13      | Food               |
+| viewpoint           | 14      | Viewpoint          |
+| restroom            | 15      | Restroom           |
+| generic             | 17      | Generic            |
+| aid_station         | 20      | Aid Station        |
+| bar                 | 21      | Bar                |
+| bike_shop           | 22      | Bike Shop          |
+| bike_parking        | 23      | Bike Parking       |
+| convenience_store   | 24      | Convenience Store  |
+| first_aid           | 25      | First Aid          |
+| hospital            | 26      | Hospital           |
+| rest_stop           | 27      | Rest Stop          |
+| trailhead           | 28      | Trailhead          |
+| geocache            | 29      | Geocache           |
+| water               | 30      | Water              |
+| control             | 31      | Control            |
+| winery              | 32      | Winery             |
+| start               | 33      | Start              |
+| stop                | 34      | Stop               |
+| finish              | 35      | Finish             |
+| atm                 | 36      | ATM                |
+| caution             | 37      | Caution            |
+| coffee              | 38      | Coffee             |
+| ferry               | 39      | Ferry              |
+| gas                 | 40      | Gas Station        |
+| library             | 41      | Library            |
+| monument            | 42      | Monument           |
+| park                | 43      | Park               |
+| segment_start       | 44      | Segment Start      |
+| segment_end         | 45      | Segment End        |
+| shopping            | 46      | Shopping           |
+| shower              | 47      | Shower             |
+| summit              | 48      | Summit             |
+| swimming            | 49      | Swimming           |
+| transit             | 50      | Transit Center     |
+| bikeshare           | 51      | Bike Share         |

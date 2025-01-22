@@ -125,6 +125,7 @@ Returns a full representation of the route identified by its `id`.
     "points_of_interest": [
       {
         "id": 1,
+        "type": "convenience_store",
         "type_id": 24,
         "type_name": "Convenience Store",
         "name": "Seven Eleven",
