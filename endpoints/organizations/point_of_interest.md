@@ -24,6 +24,7 @@ Returns a paginated list of points of interest in a club POI library, ordered by
   "points_of_interest": [
     {
       "id": 13,
+      "type": "winery",
       "type_id": 32,
       "type_name": "Winery",
       "name": "Pinot Noir",
@@ -37,6 +38,7 @@ Returns a paginated list of points of interest in a club POI library, ordered by
     },
     {
       "id": 11,
+      "type": "viewpoint",
       "type_id": 14,
       "type_name": "Viewpoint",
       "name": "Big Old Mountain",
@@ -82,6 +84,7 @@ Returns the point of interest identified by its `id`.
 {
   "point_of_interest": {
     "id": 2,
+    "type": "water",
     "type_id": 30,
     "type_name": "Water",
     "name": "Water Sucks! It really really sucks!",
@@ -123,6 +126,7 @@ Updates specific attributes of a point of interest by its `id`.
 {
   "point_of_interest": {
     "id": 3,
+    "type": "water",
     "type_id": 30,
     "type_name": "Water",
     "name": "Look I updated a POI!",
@@ -184,6 +188,7 @@ Creates a new point of interest. The following fields are **required**: `name`, 
 {
   "point_of_interest": {
     "id": 4,
+    "type": "viewpoint",
     "type_id": 14,
     "type_name": "Viewpoint",
     "name": "A new POI",
