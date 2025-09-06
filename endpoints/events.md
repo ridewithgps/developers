@@ -2,7 +2,7 @@
 
 ## GET /api/v1/events.json
 
-Returns a paginated list of routes owned by the authenticated user, ordered by `created_at` descending.
+Returns a paginated list of routes owned by the authenticated user, ordered by `updated_at` descending.
 
 **Request**
 
@@ -43,16 +43,16 @@ Returns a paginated list of routes owned by the authenticated user, ordered by `
 }
 ```
 
-Events in this representation do not include details on the routes they are associated with.
+Events in this representation do not include details on the events asscociate routes, participants or organizers.
 
-## GET /api/v1/events/[id].json
+## GET /api/v1/events/:id.json
 
 Returns a full representation of the event identified by its `id`.
 
 **Request**
 
 * **Method**: `GET`
-* **URL**: `https://ridewithgps.com/api/v1/events/[id].json`
+* **URL**: `https://ridewithgps.com/api/v1/events/:id.json`
 * **Authentication**: [Required](../authentication.md)
 
 **Example Response**
@@ -64,23 +64,54 @@ Returns a full representation of the event identified by its `id`.
 {
   "event": {
     "id": 1,
-    "url": "https://ridewithgps.com/api/v1/events/1-boring-event.json",
-    "name": "It's going to be a long day",
+    "user_id": 1,
+    "url": "https://ridewithgps.com/api/v1/events/1.json",
+    "html_url": "https://ridewithgps.com/api/v1/events/1-long-day",
+    "name": "Long day",
     "description": null,
-    "starts_on": "2024-11-02",
-    "starts_at": "2024-11-02T00:00:00-07:00",
-    "ends_on": "2024-11-03",
-    "ends_at": null,
+    "visibility": "public",
+    "location": "The bakery",
+    "lat": 45.561964,
+    "lng": -122.68902,
+    "time_zone": "America/Los_Angeles",
+    "start_date": "2024-11-02",
+    "start_time": "08:00",
+    "end_date": "2024-11-02",
+    "end_time": "14:30",
+    "all_day": false,
     "created_at": "2024-10-25T09:27:00-07:00",
     "updated_at": "2024-10-25T09:27:00-07:00",
     "routes": [
       {
         "id": 3,
         "url": "http://localhost/api/v1/routes/1.json",
-        "name": "A very hard centuryt",
+        "name": "A very hard century",
         "description": "",
         "locality": "Portland",
         // ...
+      },
+      // ...
+    ]
+    "organizers": [
+      {
+        "id": 1,
+        "name": "Testy",
+        "created_at": "2024-10-25T16:26:06Z",
+        "updated_at": "2025-09-03T15:35:17Z"
+      },
+      // ...
+    ],
+    "participants": [
+      {
+        "user": {
+          "id": 2,
+          "name": "Alice",
+          "created_at": "2024-10-25T16:26:06Z",
+          "updated_at": "2025-09-03T15:35:17Z"
+        },
+        "status": "participant",
+        "created_at": "2025-09-06T00:03:39Z",
+        "updated_at": "2025-09-06T00:03:39Z"
       },
       // ...
     ]
@@ -88,6 +119,10 @@ Returns a full representation of the event identified by its `id`.
 }
 ```
 
-The routes in the response are in their short representation, query the route URL to get track points, course points and points of interest.
+In the response:
+
+* The routes are in their short representation. Fetch the route URL to get track points, course points and points of interest.
+* The organizer key is present only for organizations. It lists the organization members that are organizers of the event.
+* The participant key lists users with their participation `status`. Possible values are `joined`, `interested`, `declined` and `disallowed`.
 
 If the authenticated user does not have permission to view the event, a `403 - Forbidden` error is returned.
