@@ -47,7 +47,7 @@ Returns a paginated list of routes owned by the authenticated user, ordered by `
 }
 ```
 
-Events in this representation do not include details on the events asscociate routes, participants or organizers.
+Events in this representation do not include details about their associated routes, participants, or organizers.
 
 ## GET /api/v1/events/:id.json
 
@@ -202,7 +202,7 @@ Update an existing event owned by the authenticated user:
 
 **Example Body**
 
-The event update endpoint accepts the same body as the event create endpoint. Partial updates are supported. For example, to update only the routes associated with an event:
+The event update endpoint accepts the same body as the event create endpoint. Partial updates are supported. For example, to replace the routes associated with an event:
 
 ```javascript
 {
@@ -228,7 +228,7 @@ Delete an event owned by the authenticated user:
 
 **Example Response**
 
-On successfull deletion, a `204` status code is returned.
+On successful deletion, a `204` status code is returned.
 
 ```javascript
 // DELETE https://ridewithgps.com/api/v1/events/1.json
