@@ -2,7 +2,7 @@
 
 ## GET /api/v1/events.json
 
-Returns a paginated list of routes owned by the authenticated user, ordered by `updated_at` descending.
+Returns a paginated list of events owned by the authenticated user, ordered by `updated_at` descending.
 
 **Request**
 
