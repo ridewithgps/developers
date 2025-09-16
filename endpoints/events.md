@@ -179,12 +179,12 @@ Create a new event, owned by the authenticated user:
  | `route_ids`            | False     | [Integer] | Routes IDs to associate with the event [^5]     |
  | `organizer_ids`        | False     | [Integer] | IDs of the users organizing the event [^6]      |
 
-* [^1]: `visibility` must be one of `public`, `private`, `friends_only` for user events, and one of `public`, `managers_only`, `members_only` for organization events.
-* [^2]: `time_zone` must be one of the [supported time zone](../reference/time_zones.md). Defaults to the time zone of the authenticated user. 
-* [^3]: Start and end dates must be provided in the ISO 8601 extended date format `YYYY-MM-DD`
-* [^4]: Start and end times must be provided in the ISO 8601 extended time format `HH:MM` (24 hours clock)
-* [^5]: Only routes owned by the event owner can be added to the event.
-* [^6]: Only active members of the organization can be specified as event organizers. 
+[^1]: `visibility` must be one of `public`, `private`, `friends_only` for user events, and one of `public`, `managers_only`, `members_only` for organization events.
+[^2]: `time_zone` must be one of the [supported time zone](../reference/time_zones.md). Defaults to the time zone of the authenticated user.
+[^3]: Start and end dates must be provided in the ISO 8601 extended date format `YYYY-MM-DD`
+[^4]: Start and end times must be provided in the ISO 8601 extended time format `HH:MM` (24 hours clock)
+[^5]: Only routes owned by the event owner can be added to the event.
+[^6]: Only active members of the organization can be specified as event organizers.
 
 **Example Response**
 
