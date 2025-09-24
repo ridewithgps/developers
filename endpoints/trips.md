@@ -44,14 +44,14 @@ Returns a paginated list of trips owned by the authenticated user, ordered by `u
 
 Each trip in the response has all the attributes of the trip detail request below, except the `track_points` attribute.
 
-## GET /api/v1/trips/[id].json
+## GET /api/v1/trips/:id.json
 
 Returns a full representation of the trip identified by its `id`.
 
 **Request**
 
 * **Method**: `GET`
-* **URL**: `https://ridewithgps.com/api/v1/trips/[id].json`
+* **URL**: `https://ridewithgps.com/api/v1/trips/:id.json`
 * **Authentication**: [Required](../authentication.md)
 
 **Example Response**
@@ -139,6 +139,22 @@ Returns a full representation of the trip identified by its `id`.
 ```
 
 If the authenticated user does not have permission to view the trip a `403 - Forbidden` error is returned.
+
+## DELETE /api/v1/trips/:id.json
+
+Delete a trip specifed by its `id`:
+
+**Request**
+
+* **Method**: `DELETE`
+* **URL**: `https://ridewithgps.com/api/v1/trips/:id.json`
+* **Authentication**: [Required](../authentication.md)
+
+**Example Response**
+
+```javascript
+// 204 - No Content
+```
 
 **References**
 
