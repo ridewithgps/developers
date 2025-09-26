@@ -18,7 +18,7 @@ An API client is required for all API requests. To create an API client associat
 
 Once the API client is created, an API key (`<api_key>`) will be assigned to it.
 
-The prefered method to authenticate is with **OAuth**, which you can configure from your API client management page.
+The preferred method to authenticate is with **OAuth**, which you can configure from your API client management page.
 
 The API also support Basic authentication, using your `<api_key>` for the username and user assigned tokens for the password.
 
@@ -57,10 +57,10 @@ API responses always contain a root key named after the requested resource(s):
 
 ### Pagination
 
-Some requests (like the routes index request at `/api/v1/routes.json`) support a `?page=<page>` query parameter for pagination. Pagination meta data is included in the response:
+Some requests (like the routes index request at `/api/v1/routes.json`) support pagination with `?page=<page>&page_size=<page_size>` query parameters. Page sizes must be between 20 and 200. If you do not include a page size, it will use the default for the route. Pagination meta data is included in the response:
 
 ```javascript
-// GET /api/v1/routes.json?page=1
+// GET /api/v1/routes.json?page=1?page_size=20
 // 200 - OK
 {
   "routes": [
@@ -70,7 +70,8 @@ Some requests (like the routes index request at `/api/v1/routes.json`) support a
     "pagination": {
       "record_count": 207,
       "page_count": 11,
-      "next_page_url": "https://ridewithgps.com/api/v1/routes.json?page=2"
+      "page_size": 20,
+      "next_page_url": "https://ridewithgps.com/api/v1/routes.json?page=2?page_size=20"
     }
   }
 }
@@ -80,7 +81,7 @@ Some requests (like the routes index request at `/api/v1/routes.json`) support a
 
 ## Error responses
 
-Successfull requests are responded with either a `200 - OK` or `201 - Created` http status code.
+Successful requests are responded with either `200 - OK`, `201 - Created`, or `204 - No Content` http status codes.
 
 When reporting an error, the API responds with one of the following status codes:
 
@@ -88,6 +89,7 @@ When reporting an error, the API responds with one of the following status codes
 * `400 - Bad Request` - malformed request
 * `401 - Not Authorized` - authentication is required and has failed
 * `403 - Forbidden` - authenticated user lacks required permissions
+* `422 - Unprocessable Entity` - request is unable to be processed
 * `500 - Internal Server Error` - an unexpected condition was encountered
 
 In case of errors, the response body also includes a descriptive error message:

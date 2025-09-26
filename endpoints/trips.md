@@ -11,6 +11,7 @@ Returns a paginated list of trips owned by the authenticated user, ordered by `u
 * **Authentication**: [Required](../authentication.md)
 * **Query params**: 
   * `page=<page_number>` - Optional, used for [pagination](../README.md#pagination)
+  * `page_size=<page_size>` - Optional, default 20, used for [pagination](../README.md#pagination)
 
 **Example response**
 
@@ -36,7 +37,8 @@ Returns a paginated list of trips owned by the authenticated user, ordered by `u
     "pagination": {
       "record_count": 22,
       "page_count": 1,
-      "next_page_url": "https://ridewithgps.com/api/v1/trips.json?page=2"
+      "page_size": 20,
+      "next_page_url": "https://ridewithgps.com/api/v1/trips.json?page=2&page_size=20"
     }
   }
 }

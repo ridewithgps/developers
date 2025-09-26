@@ -15,6 +15,7 @@ Returns a paginated list of points of interest in a club POI library, ordered by
 * **Authentication**: [Required](../../authentication.md#organization-accounts)
 * **Query params**: 
   * `page=<page_number>` - Optional, used for [pagination](../README.md#pagination)
+  * `page_size=<page_size>` - Optional, default 100, used for [pagination](../README.md#pagination)
 
 **Example response**
 
@@ -57,7 +58,8 @@ Returns a paginated list of points of interest in a club POI library, ordered by
     "pagination": {
       "record_count": 100,
       "page_count": 2,
-      "next_page_url": "https://ridewithgps.com/api/v1/points_of_interest.json?page=2"
+      "page_size": 100,
+      "next_page_url": "https://ridewithgps.com/api/v1/points_of_interest.json?page=2&page_size=100"
     }
   }
 }
