@@ -2,7 +2,7 @@
 
 ## GET /api/v1/events.json
 
-Returns a paginated list of events owned by the authenticated user, ordered by `updated_at` descending.
+Returns a paginated list of events which the authenticated user owns or participates in, ordered by `updated_at` descending.
 
 **Request**
 
@@ -34,6 +34,14 @@ Returns a paginated list of events owned by the authenticated user, ordered by `
       "url": "https://ridewithgps.com/api/v1/events/844.json",
       "html_url": "https://ridewithgps.com/api/v1/events/844-another-event",
       "name": "Another event",
+      // ...
+    },
+    {
+      "id": 888,
+      "user_id": 7,
+      "url": "https://ridewithgps.com/api/v1/events/888.json",
+      "html_url": "https://ridewithgps.com/api/v1/events/888-someone-elses-event",
+      "name": "Someone else's event",
       // ...
     },
     // ...
@@ -130,6 +138,7 @@ In the response:
 * The routes are in their short representation. Fetch the route URL to get track points, course points and points of interest.
 * The organizer key is present only for organizations. It lists the organization members that are organizers of the event.
 * The participant key lists users with their participation `status`. Possible values are `joined`, `interested`, `declined` and `disallowed`.
+* The participant key is present and lists participants only if the authenticated user owns the event.
 
 If the authenticated user does not have permission to view the event, a `403 - Forbidden` error is returned.
 
