@@ -10,7 +10,7 @@ Returns a paginated list of routes owned by the authenticated user, ordered by `
 * **Method**: `GET`
 * **URL**: `https://ridewithgps.com/api/v1/routes.json`
 * **Authentication**: [Required](../authentication.md)
-* **Query params**: 
+* **Query params**:
   * `page=<page_number>` - Optional, used for [pagination](../README.md#pagination)
 
 **Example response**
@@ -45,14 +45,14 @@ Returns a paginated list of routes owned by the authenticated user, ordered by `
 
 Each route in the response has all the attributes of the route detail request below, except the `track_points`, `course_points` and `points_of_interest` attributes.
 
-## GET /api/v1/routes/[id].json
+## GET /api/v1/routes/:id.json
 
 Returns a full representation of the route identified by its `id`.
 
 **Request**
 
 * **Method**: `GET`
-* **URL**: `https://ridewithgps.com/api/v1/routes/[id].json`
+* **URL**: `https://ridewithgps.com/api/v1/routes/:id.json`
 * **Authentication**: [Required](../authentication.md)
 
 **Example Response**
@@ -141,6 +141,22 @@ Returns a full representation of the route identified by its `id`.
 ```
 
 If the authenticated user does not have permission to view the route a `403 - Forbidden` error is returned.
+
+## DELETE /api/v1/routes/:id.json
+
+Delete a route specifed by its `id`:
+
+**Request**
+
+* **Method**: `DELETE`
+* **URL**: `https://ridewithgps.com/api/v1/routes/:id.json`
+* **Authentication**: [Required](../authentication.md)
+
+**Example Response**
+
+```javascript
+// 204 - No Content
+```
 
 **References**
 
