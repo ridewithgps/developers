@@ -44,7 +44,7 @@ Returns a paginated list of trips owned by the authenticated user, ordered by `u
 }
 ```
 
-Each trip in the response has all the attributes of the trip detail request below, except the `track_points` attribute.
+Each trip in the response has all the attributes of the trip detail request below, except the `track_points` and `gear` attributes.
 
 ## GET /api/v1/trips/:id.json
 
@@ -135,7 +135,15 @@ Returns a full representation of the trip identified by its `id`.
         "c": 0
       }
       // ...
-    ]
+    ],
+    "gear": {
+      "id": 1,
+      "make": "Purple Hammock Cycles",
+      "model": "Mr Demeter",
+      "description": "",
+      "exclude_from_totals": false,
+      "created_at": "2025-09-24T22:16:15Z"
+    }
   }
 }
 ```
