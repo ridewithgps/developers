@@ -50,6 +50,8 @@ Attributes exposed by the API for routes and trips:
 | `calories`            | Calories burnt                              | Integer | calories          |       | Y     |
 | `created_at`          | Creation date ISO 8601                      | String  | n/a               | Y     | Y     |
 | `updated_at`          | Last update date ISO 8601                   | String  | n/a               | Y     | Y     |
+| `device_manufacturer` | Manufacturer of recording device            | String  | n/a               | N     | Y     |
+| `device_display_name` | Name of the recording device                | String  | n/a               | N     | Y     |
 | `track_points`        | [Track points](track_points.md)             | Array   | n/a               | Y     | Y     |
 | `course_points`       | [Course points](track_points.md)            | Array   | n/a               | Y     |       |
 | `points_of_interest`  | [Points of interest](points_of_interest.md) | Array   | n/a               | Y     |       |

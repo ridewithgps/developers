@@ -136,6 +136,8 @@ Returns a full representation of the trip identified by its `id`.
       }
       // ...
     ],
+    "device_manufacturer": "Garmin",
+    "device_display_name": "Edge 540",
     "gear": {
       "id": 1,
       "make": "Purple Hammock Cycles",
