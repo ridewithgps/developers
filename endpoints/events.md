@@ -231,6 +231,9 @@ The response body includes a full event representation, identical to the one of 
 
 ## Event logo and banner
 
+> [!NOTE]
+> Logo and banner are available only for organization owned events, not for user events.
+
 A logo or a banner can be added to an event for both the create and update endpoints by switching to a multi-part payload with the files to upload:
 
 For example, to add logo and banner to an existing event:
