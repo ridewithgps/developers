@@ -9,7 +9,7 @@ Returns a paginated list of events which the authenticated user owns or particip
 * **Method**: `GET`
 * **URL**: `https://ridewithgps.com/api/v1/events.json`
 * **Authentication**: [Required](../authentication.md)
-* **Query params**: 
+* **Query params**:
   * `page=<page_number>` - Optional, used for [pagination](../README.md#pagination)
   * `page_size=<page_size>` - Optional, default 20, used for [pagination](../README.md#pagination)
 
@@ -84,6 +84,8 @@ Returns a full representation of the event identified by its `id`.
     "name": "Long day",
     "description": null,
     "visibility": "public",
+    "logo_url": "https://ridewithgps.com/cos/events/standard_logo/1.jpg",
+    "banner_url": "https://ridewithgps.com/cos/events/standard_banner/1.jpg"
     "location": "The bakery",
     "lat": 45.561964,
     "lng": -122.68902,
@@ -226,6 +228,43 @@ The event update endpoint accepts the same body as the event create endpoint. Pa
 **Example Response**
 
 The response body includes a full event representation, identical to the one of `GET /api/v1/events/:id.json`
+
+## Event logo and banner
+
+A logo or a banner can be added to an event for both the create and update endpoints by switching to a multi-part payload with the files to upload:
+
+For example, to add logo and banner to an existing event:
+
+**Request**
+
+* **Method**: `PATCH`
+* **URL**: `https://ridewithgps.com/api/v1/events/1.json`
+* **Authentication**: Required
+* **Headers:**
+  * `Content-Type: multipart/form-data`
+* **Example body**
+
+```
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="event[name]"
+
+A long day
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="event[logo]"; filename="logo.png"
+Content-Type: image/png
+
+<binary image data here>
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+Content-Disposition: form-data; name="event[banner]"; filename="banner.jpg"
+Content-Type: image/jpg
+
+<binary image data here>
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+```
+
+* The uploaded logo must be less than 1MB in size. It is resized to be 140px x 140px.
+* The uploaded banner must be less than 10MB in size. it is resized to be 2560px x 1080px.
+* The uploaded files URLs are included in the response as `logo_url` and `banner_url`.
 
 ## DELETE /api/v1/events/:id.json
 
