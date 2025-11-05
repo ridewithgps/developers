@@ -106,6 +106,8 @@ Returns a full representation of the trip identified by its `id`.
     "difficulty": "easy",
     "created_at": "2024-09-09T15:29:01-07:00",
     "updated_at": "2024-09-09T15:29:01-07:00",
+    "user_id": 1,
+    "device": "Garmin Edge 540",
     "track_points": [
       {
         "x": -123.073723,
@@ -136,8 +138,6 @@ Returns a full representation of the trip identified by its `id`.
       }
       // ...
     ],
-    "device_manufacturer": "Garmin",
-    "device_display_name": "Edge 540",
     "gear": {
       "id": 1,
       "make": "Purple Hammock Cycles",
