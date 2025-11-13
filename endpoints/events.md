@@ -100,7 +100,7 @@ Returns a full representation of the event identified by its `id`.
     "routes": [
       {
         "id": 3,
-        "url": "http://localhost/api/v1/routes/1.json",
+        "url": "https://ridewithgps.com/api/v1/routes/1.json",
         "name": "A very hard century",
         "description": "",
         "locality": "Portland",
@@ -130,6 +130,15 @@ Returns a full representation of the event identified by its `id`.
         "updated_at": "2025-10-03T00:03:39Z"
       },
       // ...
+    ],
+    "photos": [
+      {
+        "id": 1,
+        "url": "https://ridewithgps.com/api/v1/photos/1/4f33a0f9b589fa94d576c0c90e35b986.jpg",
+        "highlighted": true,
+        "caption": null,
+        "created_at": "2025-10-29T21:06:02Z"
+      }
     ]
   }
 }
@@ -141,6 +150,7 @@ In the response:
 * The organizer key is present only for organizations. It lists the organization members that are organizers of the event.
 * The participant key lists users with their participation `status`. Possible values are `joined`, `interested`, `declined` and `disallowed`.
 * The participant key is present and lists participants only if the authenticated user owns the event.
+* The photos key is a list of photos associated with the event. Only one of the photos has a `true` value for the `highlighted` attribute.
 
 If the authenticated user does not have permission to view the event, a `403 - Forbidden` error is returned.
 

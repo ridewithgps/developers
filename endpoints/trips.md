@@ -145,7 +145,16 @@ Returns a full representation of the trip identified by its `id`.
       "description": "",
       "exclude_from_totals": false,
       "created_at": "2025-09-24T22:16:15Z"
-    }
+    },
+    "photos": [
+      {
+        "id": 1,
+        "url": "https://ridewithgps.com/api/v1/photos/1/4f33a0f9b589fa94d576c0c90e35b986.jpg",
+        "highlighted": true,
+        "caption": null,
+        "created_at": "2025-10-29T21:06:02Z"
+      }
+    ]
   }
 }
 ```
